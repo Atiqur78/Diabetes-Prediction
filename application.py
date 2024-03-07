@@ -22,14 +22,20 @@ def prediction():
         BMI = float(request.form.get("BMI"))
         DiabetesPedigreeFunction = float(request.form.get("DiabetesPedigreeFunction"))
         Age = int(request.form.get("Age"))
+
+        new_scaled_data = scaler_model.transform([[Pregnancies, Glucose, BloodPressure ,SkinThickness,Insulin, BMI,DiabetesPedigreeFunction	,Age]])
+        predict = log_model.predict(new_scaled_data)
+
+        if predict[0] ==1:
+            result = "Diabetic"
+        else:
+            result ="Non-Diabetic"
+
+        return render_template("home.html", result=result)
     else:
         return render_template("home.html")
 
-    new_scaled_data = scaler_model.transform([[Pregnancies, Glucose, BloodPressure ,SkinThickness,Insulin, BMI,DiabetesPedigreeFunction	,Age]])
-    result = log_model.predict(new_scaled_data)
-
-
-    return render_template("home.html", result=result)
+    
 
 if __name__=="__main__":
     app.run(host="0.0.0.0")
