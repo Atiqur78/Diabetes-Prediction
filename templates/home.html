@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Diabetes Prediction</title>
+    </head>
+    <body>
+        <h1> Diabetes Prediction</h1>
+        <form action ="/prediction" method='post'>
+            <input type = "text" name = "Pregnancies" placeholder = "Pregnancies" required ="required"><br>
+            <input type ="text" name = "Glucose" placeholder= "Glucose" required ="required"><br>
+            <input type = "BloodPressure" name = "BloodPressure" placeholder='BloodPressure' required = "required"><br>
+            <input type = "text" name = "SkinThickness" placeholder = "SkinThickness" required="required"><br>
+            <input type = "text" name = "Insulin" placeholder = "Insulin" required="required"><br>
+            <input type = "text" name = "BMI" placeholder = "BMI" required="required"><br>
+            <input type = "text" name = "DiabetesPedigreeFunction" placeholder = "DiabetesPedigreeFunction" required="required"><br>
+            <input type = "text" name = "Age" placeholder = "Age" required="required"><br>
+            <input type ="submit">
+        </form>
+        <h1>The Diabetes Prediction is {{result}}</h1>
+
+    </body>
+</html>
