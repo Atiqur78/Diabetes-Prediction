@@ -4,7 +4,8 @@ import pickle
 scaler_model = pickle.load(open("models/scaler1.pkl", "rb"))
 log_model = pickle.load(open("models/log_reg.pkl", "rb"))
 
-app = Flask(__name__)
+application = Flask(__name__)
+app = application
 
 @app.route("/")
 def hello_world():
